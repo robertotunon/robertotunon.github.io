@@ -1,0 +1,11 @@
+name: Where to start
+url: /start
+subsections:
+  - title: Basic Services
+    url: /services
+  - title: Department specific documentation
+    url: /departments
+  - title: Our Apps
+    url: /apps
+  - title: CHH Site
+    url: http://creativehothouse.com

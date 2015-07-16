@@ -1,0 +1,342 @@
+/*__________________ Headings __________________*/
+h2, h3, h4, h5, h6{
+    font-weight: 500;
+    line-height: normal;
+    margin: 0 0 .5em 0;
+}
+
+/*__________________ Flexbox __________________*/
+.flex {
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  -ms-align-items: stretch;
+  align-items: stretch; }
+
+
+/*__________________ Site header __________________*/
+.site-header {
+    widht: 100%;
+    padding: 5em 0;
+    margin: 0 auto 4em;
+    text-align: center;
+    background-color: $corp_black;
+    position: relative;
+    .site-title {
+        display: inline-block;
+        font-size: 1.25rem;
+        line-height: 1rem;
+        letter-spacing: -.025rem;
+        text-transform: uppercase;
+        text-align: center;
+        color: $corp_color;
+        margin: 0 auto .5em;
+        &:before{
+            content: 'The';
+            display: block;
+            font-size: 1.15rem;
+            line-height: 1rem;
+            text-transform: none;
+            text-align: left;
+            margin: 0 auto .25em;
+        }
+        a{
+            display: block;
+            width: 270px;
+            height: 93px;
+            color: $corp_color;
+            text-indent:-9999px;
+            background: url(../images/logo_creativehothouse.svg) no-repeat center;
+            background-size: cover;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+    .description{
+        font-weight: 300;
+        font-size: 1.125rem;
+        line-height: 1rem;
+        text-transform: uppercase;
+        color: $corp_color;
+        margin: 0;
+    }
+}
+
+.site-nav {
+    float: right;
+    line-height: 56px;
+
+    .menu-icon {
+        display: none;
+    }
+
+    .page-link {
+        color: $text-color;
+        line-height: $base-line-height;
+
+        // Gaps between nav items, but not on the first one
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+    }
+
+    @include media-query($on-palm) {
+        position: absolute;
+        top: 9px;
+        right: 30px;
+        background-color: $background-color;
+        border: 1px solid $grey-color-light;
+        border-radius: 5px;
+        text-align: right;
+
+        .menu-icon {
+            display: block;
+            float: right;
+            width: 36px;
+            height: 26px;
+            line-height: 0;
+            padding-top: 10px;
+            text-align: center;
+
+            > svg {
+                width: 18px;
+                height: 15px;
+
+                path {
+                    fill: $grey-color-dark;
+                }
+            }
+        }
+
+        .trigger {
+            clear: both;
+            display: none;
+        }
+
+        &:hover .trigger {
+            display: block;
+            padding-bottom: 5px;
+        }
+
+        .page-link {
+            display: block;
+            padding: 5px 10px;
+        }
+    }
+}
+
+.site-content{
+    max-width: 800px;
+    padding: 0 1em;
+    margin: 0 auto 4em;
+    .content{
+        flex-basis:68%;
+    }
+}
+
+address{
+    font-style: normal;
+}
+
+/*__________________ Sidebar __________________*/
+.sidebar{
+    max-width: 220px;
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1em;
+        li{
+            margin:0 0 .5em 0;
+            &:hover{
+            }
+            &.offline{
+                color: $light_grey;
+            }
+            h3{
+                font-size: 1rem;
+            }
+            a{
+                display: block;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+            ul{
+                margin: 0 0 1em 0;
+                li{
+                    border-left: 1px solid $light_grey;
+                    a{
+                        padding: .15em .25em;
+                        font-size: .85rem;
+                        line-height: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*__________________ Footer __________________*/
+.site-footer {
+    max-width:800px;
+    border-top: 1px solid $grey-color-light;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1em 1em;
+    .chh_link{
+        display: block;
+        width: 3em;
+        height: 3em;
+        text-indent: -9999px;
+        margin: 0 auto;
+        background: url(../images/icon_creativehothouse.svg) no-repeat center;
+        background-size: cover;
+    }
+    h5{
+        font-size: 1rem;
+        line-height: 1rem;
+        margin: .25em 0 0;
+    }
+    .at{
+        display: block;
+        margin: 0 auto;
+        font-size: .75rem;
+        line-height: .75rem;
+        color: $light_grey;
+    }
+    p{
+        font-size: .75rem;
+        line-height: 1rem;
+        color: $light_grey;
+        margin: 2em auto;
+    }
+}
+
+.footer-heading {
+    font-size: 18px;
+    margin-bottom: $spacing-unit / 2;
+}
+
+.contact-list,
+.social-media-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+
+
+@include media-query($on-laptop) {
+    .footer-col-1,
+    .footer-col-2 {
+        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+        width:         calc(50% - (#{$spacing-unit} / 2));
+    }
+
+    .footer-col-3 {
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+@include media-query($on-palm) {
+    .footer-col {
+        float: none;
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+    padding: $spacing-unit 0;
+}
+
+.page-heading {
+    font-size: 20px;
+}
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        margin-bottom: $spacing-unit;
+    }
+}
+
+.post-meta {
+    font-size: $small-font-size;
+    color: $grey-color;
+}
+
+.post-link {
+    display: block;
+    font-size: 24px;
+}
+
+
+
+/**
+ * Posts
+ */
+.post-header {
+    margin-bottom: $spacing-unit;
+}
+
+.post-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+
+    @include media-query($on-laptop) {
+        font-size: 36px;
+    }
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 32px;
+
+        @include media-query($on-laptop) {
+            font-size: 28px;
+        }
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+
+        @include media-query($on-laptop) {
+            font-size: 18px;
+        }
+    }
+}
