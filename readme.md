@@ -1,4 +1,3 @@
-# This is my github page
 
 While I get some time to write some quality content here you can check <a href="http://robertotunon.com" target="_blank">my portfolio site</a> to see some projects done and get my CV.
 
